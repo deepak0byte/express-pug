@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#{title}</title>
+    <!-- <title>Using raw HTML in Pug template engine</title> -->
+    style
+        include ../static/style.css
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li> <a href="">Home </a> </li>
+            <li> <a href="">About </a></li>
+            <li> <a href="">Contact Us </a></li>
+            <li> <a href="">Blog </a></li>
+            <li> <a href="" id="create">Create Account</a></li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Free Courses offer Enroll Now!</h1>
+         <!-- <p>
+            | #{content}
+            |
+            This is a plain html using pug
+        </p> -->
+
+        <form action="/" method="post" id="content">
+            <input type="text" name="name" id="name" placeholder="Enter your Name">
+            <input type="text" name="email" id="email" placeholder="Enter your Email">
+            <input type="text" name="password" id="password" placeholder="Enter a Password">
+            <input type="text" name="confirm" id="confirm" placeholder="Confirm your Password">
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+            <textarea name="more" id="more" cols="30" rows="10" placeholder="More about you..."></textarea>
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,3 +1,95 @@
 *{
-    font-family: 'Courier New', Courier, monospace;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: rgb(3 9 46);
+    padding: 3px 5px;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    margin-top: 8px;
+}
+li{
+    list-style: none;
+    padding: 4px 4px;
+}
+a{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: normal;
+    font-size: 21px;
+    color: white;
+}
+a:hover{
+    color: rgb(151, 137, 137);
+}
+#create{
+    text-decoration: none;
+    padding: 4px;
+    font-weight:normal;
+    font-size: 18px;
+    color: white;
+    right: 10px;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+#create:hover{
+    background-color: rgb(230, 217, 184);
+    color: black;
+}
+h1{
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+    padding:10px;
+    font-size: 3.6rem;
+    color: rgba(6,6,87);
+}
+
+.container{
+    margin: 18px auto;
+}
+body::before{
+    opacity: 0.7;
+    content: " ";
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 130%;
+    position: absolute;
+    background: url('./static/bg.jpg')  no-repeat center center;
+    background-size: 100%;
+
+}
+input, textarea{
+    display: block;
+    padding: 3px;
+    margin: 12px auto;
+    width: 55%;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.btn{
+    display: block;
+    padding: 4px 17px;
+    margin: 12px auto;
+    outline: none;
+    font-size: 20px;
+    font-weight: normal;
+    border: 1px solid black;
+    background-color: rgb(6, 6, 87);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+.btn:hover{
+    background-color: rgb(230, 217, 184);
+    color: black;
 }

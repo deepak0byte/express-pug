@@ -1,39 +1,39 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const fs = require('fs');
 const port = 80;
 
-//For serving static files.
-app.use('/static', express.static('static'));
+//EXPRESS SPECIFIC STUFF
+app.use('/static', express.static('static')); //For serving static files.
+app.use(express.urlencoded());
 
-//set the templete engine as pug
-app.set('view engine', 'pug');
+//PUG SPECIFIC STUFF
+app.set('view engine', 'pug'); //set the templete engine as pug
+app.set('views', path.join(__dirname, 'views')); //set the view directory
 
-//set the view directory
-app.set('views', path.join(__dirname, 'views'));
+//ENDPOINTS
+app.get('/', (req, res) => {
+    const con = ('This is the best content for learn pug templete engine');
+    const params = {'title':'Pug is the best templete engine', 'content': con}
+    res.status(200).render('index.pug', params);
+});
 
-// our pug demo endpoint
-app.get("/demo", (req, res) => {
-    res.status(200).render('demo', { title: 'Hey Deepak', message: 'Hello there! and thank for providing me more content.' })
+app.post('/', (req,res) => {
+    name = req.body.name
+    email = req.body.email
+    password = req.body.password
+    confirm = req.body.confirm
+    message = req.body.message
+    more = req.body.more
+    
+    let outputToWrite = `The name of student is ${name}, email-id and password is ${email}, ${password}, ${confirm} and message from student is ${message}. More about student: ${more}.`
+    fs.writeFileSync('output.txt', outputToWrite);
+    const params = {'message':'Your form has been submitted successfully!'}
+    res.status(200).render('index.pug', params);
 })
 
-
-app.get("/", (req, res) => {
-    res.status(200).send("This is home page of my first express app.");
-});
-
-app.get("/this", (req, res) => {
-    res.status(404).send("This is page is not found.");
-});
-
-app.get("/about", (req, res) => {
-    res.send("This is about page of my first express app.");
-});
-
-app.post("/about", (req, res) => {
-    res.send("This is a post request about page of my first express app.");
-});
-
+//START THE SERVER
 app.listen(port, () => {
     console.log(`The application started successfully on port ${port}`);
 });
